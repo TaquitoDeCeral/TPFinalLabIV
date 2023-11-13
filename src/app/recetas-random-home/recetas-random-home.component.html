@@ -1,0 +1,11 @@
+<section *ngIf="comidas" class="listing">
+  <img
+    class="listing-photo"
+    [src]="comidas.strMealThumb"
+    alt="Exterior photo of {{ comidas.strMeal }}"
+    crossorigin
+  />
+  <h2 class="listing-heading">{{ comidas.strMeal }}</h2>
+  <p class="listing-location">{{ comidas.strArea }}</p>
+  <a [routerLink]="['/details', comidas.idMeal]">Let's cook!</a>
+</section>

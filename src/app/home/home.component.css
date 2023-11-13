@@ -1,0 +1,85 @@
+#espacio{
+  background-image: linear-gradient(100deg, #000000, #00000020),
+                    url('/assets/Fondo.jpg');
+  height: 40em;
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#welcome{
+  padding-bottom: 15em;
+}
+
+#espacio h1{
+  text-align: center;
+  font-size: 5em;
+  color: rgb(236, 225, 210);
+  margin-bottom: 0.4em;
+}
+
+#espacio p{ 
+  text-align: center;
+  font-size: 1em;
+  color: rgb(236, 225, 210);
+}
+
+#Buscador{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 1em;
+}
+.results {
+    display: grid;
+    column-gap: 14px;
+    row-gap: 14px;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 400px));
+    margin: 2em;
+    margin-top: 50px;
+    justify-content: space-around;
+  }
+  input[type="text"] {
+    border: solid 1px burlywood;
+    padding: 10px;
+    border-radius: 8px;
+    margin-right: 0;
+    margin-left: 0;
+    display: inline-block;
+    width: 30em;
+  }
+  button {
+    padding: 10px;
+    border: solid 1px rgb(83, 14, 14);
+    background: wheat;
+    color: rgb(22, 14, 14);
+    border-radius: 8px;
+  }
+  @media (min-width: 500px) and (max-width: 768px) {
+    .results {
+        grid-template-columns: repeat(2, 1fr);
+    }  
+  }
+  @media (max-width: 499px) {
+    .results {
+        grid-template-columns: 1fr;
+    }    
+  }
+  @media (max-width: 900px){
+    input[type="text"] {
+        width: 15rem;
+      }
+}
+@media (max-width: 387px){
+    input[type="text"] {
+
+        width: 8rem;
+      }
+}
+
+  

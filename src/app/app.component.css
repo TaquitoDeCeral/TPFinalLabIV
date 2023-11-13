@@ -1,0 +1,81 @@
+header{
+    display: flex;
+    min-height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: wheat;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    margin: 0;
+    padding: 0%;
+    padding-left: 2em;
+    padding-right: 2em;
+
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+.ico-logo{
+    width: 50px;
+    height: 50px;
+    margin-right: 1.2em;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+nav a{
+    font-weight: 600;
+    padding-right: 1em;
+
+}
+nav a:hover{
+    color: white;
+    transition: 0.2s;
+}
+
+input[type="text"] {
+    border: solid 1px burlywood;
+    padding: 10px;
+    border-radius: 8px;
+    margin-right: 4px;
+    margin-left: 2em;
+    display: inline-block;
+    width: 20rem;
+  }
+  button {
+    padding: 10px;
+    border: solid 1px rgb(83, 14, 14);
+    background: wheat;
+    color: rgb(22, 14, 14);
+    border-radius: 8px;
+  }
+  button:hover{
+    background-color:rgb(245, 215, 160);
+    transition: 0.9s;
+  }
+
+
+@media (max-width: 900px){
+    header{
+        flex-direction: column;
+    }
+    nav{
+        padding: 10px 0px;
+    }
+    input[type="text"] {
+        width: 15rem;
+      }
+}
+@media (max-width: 387px){
+    input[type="text"] {
+
+        width: 8rem;
+      }
+    nav{
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(185, 185, 134);
+    font-family: 'Montserrat', sans-serif;
+}
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
