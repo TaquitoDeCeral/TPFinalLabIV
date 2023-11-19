@@ -1,0 +1,21 @@
+<nav id="nav2">
+
+    <section id="categorias">
+        <form id="form1">
+          <h2 id="Opciones">
+            Category
+            <ul>
+              <li *ngFor="let category of CategoryList">{{ category.strCategory }}</li>
+            </ul>
+          </h2>
+        </form>
+      </section>
+
+    <section id="Buscador">
+        <form (submit)="searchRecetas($event, filter.value)">
+            <input type="text" placeholder="Find your food" #filter />
+            <button class="primary" type="submit" >Search</button>        
+          </form> 
+    </section>
+
+  </nav>

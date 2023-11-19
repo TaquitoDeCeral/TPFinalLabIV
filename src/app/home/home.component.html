@@ -1,20 +1,18 @@
-<section id="Buscador">
-    <form>
-      <input type="text" placeholder="Find your food" #filter />
-      <button class="primary" type="button" >Search</button>
-    </form>
-  </section>
-    
-  <section id="espacio">
+
+
+<div>
+<section id="espacio">      
     <div id="welcome">
       <h1>Welcome!</h1>
       <p>Learn the best recipes with us. </p>
     </div>
-  </section>
+</section>
 
   <section class="results">
+    
     <app-recetas-random-home *ngFor="let comida of listaComidas" [comidas]="comida" >
     </app-recetas-random-home>
 
   </section>
-
+<app-buscador></app-buscador>
+</div>

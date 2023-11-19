@@ -1,0 +1,18 @@
+<main>
+    <div *ngIf="nombreUsuarioRegistrado">
+      <h2>You're welcome, {{ nombreUsuarioRegistrado }}!</h2>
+    </div>
+
+<form novalidate [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+    <label for="email">Correo Electrónico:</label>
+    <input type="email" id="email" formControlName="email">
+  
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" formControlName="name">
+  
+    <label for="contraseña">Contraseña:</label>
+    <input type="password" id="contraseña" formControlName="password">
+  
+    <button type="submit" [disabled]="registroForm.invalid">Registrar</button>
+  </form>
+</main>

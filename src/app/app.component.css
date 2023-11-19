@@ -1,3 +1,4 @@
+
 header{
     display: flex;
     min-height: 50px;
@@ -36,27 +37,23 @@ nav a:hover{
     transition: 0.2s;
 }
 
-input[type="text"] {
-    border: solid 1px burlywood;
-    padding: 10px;
-    border-radius: 8px;
-    margin-right: 4px;
-    margin-left: 2em;
-    display: inline-block;
-    width: 20rem;
-  }
-  button {
-    padding: 10px;
-    border: solid 1px rgb(83, 14, 14);
-    background: wheat;
-    color: rgb(22, 14, 14);
-    border-radius: 8px;
-  }
-  button:hover{
-    background-color:rgb(245, 215, 160);
-    transition: 0.9s;
-  }
+#datos {
+    background-color: wheat;
+    color: rgb(131, 52, 52);
+    height: 24em;
+    margin-top: 4em;
+}
+footer {
+    color: rgb(131, 52, 52);
+    
+    display: flex;
+    justify-content: center;
 
+}
+footer p{
+    font-size: 0.8em;
+background-color: rgb(194, 145, 86);
+}
 
 @media (max-width: 900px){
     header{
@@ -65,15 +62,8 @@ input[type="text"] {
     nav{
         padding: 10px 0px;
     }
-    input[type="text"] {
-        width: 15rem;
-      }
 }
-@media (max-width: 387px){
-    input[type="text"] {
-
-        width: 8rem;
-      }
+@media (max-width: 440px){
     nav{
         display: flex;
         flex-direction: column;

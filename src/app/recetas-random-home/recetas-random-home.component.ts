@@ -1,15 +1,11 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { recetas } from '../recetas';
-import {RouterModule} from '@angular/router';
+import { recetas } from '../Interfaces/recetas';
 
 @Component({
   selector: 'app-recetas-random-home',
-  standalone: true,
-  imports: [CommonModule, RouterModule],
   templateUrl: './recetas-random-home.component.html',
   styleUrl: './recetas-random-home.component.css'
 })
-export class recetasRandomHomeComponent {
+export class RecetasRandomHomeComponent {
   @Input() comidas!: recetas;
 }

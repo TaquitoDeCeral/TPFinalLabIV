@@ -1,0 +1,118 @@
+#nav2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 67px;
+    z-index: 1000;
+    margin: 0;
+    padding: 0.5em;
+}
+#categorias{
+    flex: flex;
+    align-items: center;
+    justify-content: start;
+    margin: 0;
+    padding: 1em;
+}
+
+#Buscador{
+    display: flex;
+    align-items: center;
+   
+    margin: 0;
+    padding: 1em;
+  }
+
+#Buscador form{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+input[type="text"] {
+    border: solid 1px burlywood;
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    margin-right: 0.8em;
+    margin-left: 2em;
+    display: inline-block;
+    width: 20rem;
+  }
+  button {
+    padding: 0.8em;
+    border: solid 1px rgb(83, 14, 14);
+    background: wheat;
+    color: rgb(22, 14, 14);
+    border-radius: 8px;
+  }
+  button:hover{
+    background-color: rgb(25, 159, 168);
+    transition: 0.2s;
+  }
+
+
+
+  #categorias {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 1em;
+}
+
+#Opciones {
+    position: relative;
+    background-color: wheat;
+    border-radius: 8px;
+    padding: 0.2em;
+    width: 6em;
+    
+}
+
+#Opciones ul {
+    width: 100%;
+    border-radius: 8px;
+    background-color: wheat;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    max-height: 200px; /* Altura máxima para desplazamiento */
+    overflow-y: auto;
+    padding: 0.2em;
+    margin: 0;
+    margin-top: 0.1em;
+    list-style: none;
+}
+
+#Opciones ul::-webkit-scrollbar {
+    width: 5px; /* Ancho de la barra de desplazamiento */
+}
+
+#Opciones ul::-webkit-scrollbar-thumb {
+    background-color: rgb(151, 69, 69); /* Color del "pulgón" de la barra de desplazamiento */
+    border-radius: 4px;
+}
+
+#Opciones ul::-webkit-scrollbar-track {
+    background-color: transparent; /* Color de fondo de la barra de desplazamiento */
+}
+
+#Opciones ul li {
+    padding: 8px;
+}
+
+#Opciones ul li:hover {
+    background-color: rgb(218, 180, 98);
+    color: white;
+}
+
+#Opciones:hover ul {
+    display: block;
+}
+
+#Opciones:hover {
+    background-color: rgb(218, 180, 98);
+}

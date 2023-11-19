@@ -1,19 +1,23 @@
 <main>
+  
   <header>
     <a href="#" class="logo">
-          <img class="ico-logo" src="/assets/flavor.png" alt="logo" aria-hidden="true" />
+          <img class="ico-logo" src="../assets/Imagenes/flavor.png" alt="logo" aria-hidden="true" />
           <h2 class="nombre">FlavorAlchemy</h2>
     </a>
+      <nav id="nav1">
+        <a href="" class="nav-link">Contact</a>
+        <a href="" class="nav-link">Log in</a>
+        <a routerLink="/registro-usuario" class="nav-link">Sign up</a>
+      </nav>
 
-    <nav>
-      <a href="" class="nav-link">Contact</a>
-      <a href="" class="nav-link">Log in</a>
-      <a href="" class="nav-link">Sign up</a>
-    </nav>
-    
   </header>
-  <section class="content">
 
-    <router-outlet></router-outlet>
+  <section class="content">
+      <router-outlet></router-outlet>
+    
   </section>
 </main>
+
+<section id="datos"></section>
+<footer><p>Copyright 2023 Powered by Taquito's Company</p></footer>

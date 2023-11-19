@@ -1,0 +1,14 @@
+<app-buscador></app-buscador>
+<section class="results">
+<section *ngFor="let receta of recetas" class="listing">
+    <img
+      class="listing-photo"
+      [src]="receta.strMealThumb"
+      alt="Exterior photo of {{ receta.strMeal }}"
+      crossorigin
+    />
+    <h2 class="listing-heading">{{ receta.strMeal }}</h2>
+    <p class="listing-location">{{ receta.strArea }}</p>
+    <a [routerLink]="['/detalle-receta', receta.idMeal]">Let's cook!</a>
+  </section>
+  </section>

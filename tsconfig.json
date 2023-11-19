@@ -11,6 +11,7 @@
     "noFallthroughCasesInSwitch": true,
     "esModuleInterop": true,
     "sourceMap": true,
+    "strictPropertyInitialization": false,
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
