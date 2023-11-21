@@ -116,3 +116,32 @@ input[type="text"] {
 #Opciones:hover {
     background-color: rgb(218, 180, 98);
 }
+
+@media (max-width: 900px){
+    #nav2{
+        margin-top: 3em;
+    }
+}
+@media (max-width: 671px){
+    #nav2{
+        margin-top: 3em;
+    }
+    #nav2 #Buscador input{
+        width: 20em;
+    }
+}
+@media (max-width: 440px){
+    #nav2{
+        margin-top: 11em;
+        display: flex;
+        flex-direction: column;
+    }
+    #nav2 #categorias{
+        display: flex;
+       justify-content: start;
+    }
+    
+    #nav2 #Buscador input{
+        width: 10em;
+    }
+}

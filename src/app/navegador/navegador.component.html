@@ -1,0 +1,16 @@
+<nav id="nav1">
+    <ng-container *ngIf="!nombreUsuarioRegistrado; else usuarioRegistradoTemplate">
+      <!-- Mostrar cuando no hay usuario registrado (formulario de inicio de sesión) -->
+      <input type="text" placeholder="Nombre de usuario" class="nav-input" [(ngModel)]="username">
+      <input type="password" placeholder="Contraseña" class="nav-input" [(ngModel)]="password">
+      <button class="nav-button" (click)="login()">Log in</button>
+      <a routerLink="/registro-usuario" class="nav-link">Sign up</a>
+    </ng-container>
+  
+    <ng-template #usuarioRegistradoTemplate>
+      <!-- Mostrar cuando hay un usuario registrado -->
+      <button class="nav-button" (click)="logout()">Log out</button>
+      <a routerLink="/mis-recetas" class="nav-link">Mis recetas</a>
+      <span>{{ nombreUsuarioRegistrado }}</span>
+    </ng-template>
+  </nav>

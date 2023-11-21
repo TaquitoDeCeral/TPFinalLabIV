@@ -1,12 +1,20 @@
 <app-buscador></app-buscador>
 <section class="results">
+
 <section *ngFor="let receta of recetas" class="listing">
+  <div class="imagenyboton">
     <img
-      class="listing-photo"
-      [src]="receta.strMealThumb"
-      alt="Exterior photo of {{ receta.strMeal }}"
+      class="recipe-photo"
+      [src]="receta?.strMealThumb"
+      alt="Exterior photo of {{ receta?.strMeal }}"
       crossorigin
+      
     />
+    <button class="save-button" (click)="receta && guardarReceta(receta.idMeal)"> 
+      Save
+    </button>
+    </div>
+    
     <h2 class="listing-heading">{{ receta.strMeal }}</h2>
     <p class="listing-location">{{ receta.strArea }}</p>
     <a [routerLink]="['/detalle-receta', receta.idMeal]">Let's cook!</a>

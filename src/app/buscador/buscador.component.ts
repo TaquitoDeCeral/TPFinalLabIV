@@ -6,15 +6,18 @@ import { ApiConexionService } from '../api-conexion.service';
 import { Category } from '../Interfaces/category';
 
 
+
 @Component({
   selector: 'app-buscador',
   templateUrl: './buscador.component.html',
   styleUrls: ['./buscador.component.css']
 })
 export class BuscadorComponent implements OnInit{
+  nuevoNombre: string = 'Category';
   recetas: recetas[] = [];
-  filteredRecetas: recetas[] = [];
   CategoryList: Category[] = [];
+  selectedCategory: string;
+
   constructor(private apiService: ApiConexionService, private router: Router) {
 
   }
@@ -24,25 +27,38 @@ export class BuscadorComponent implements OnInit{
   async getCategorys(){
     this.CategoryList = await this.apiService.getCategorys();
     console.log(this.CategoryList);
+    console.log(this.CategoryList[0].strCategory);
   }
 
-  async getRecetas(nombre: string) {
-    this.recetas = await this.apiService.getAllRecetas(nombre);
-   
-  
-    //console.log(this.recetas);
-    //console.log(this.filteredRecetas);
+  async getRecetas(filtro: string, categoria?: string) {
+    this.recetas = [];
+    if(!categoria){
+      for(let i = 0; i < this.CategoryList.length; i++){
+      this.recetas.push(...await this.apiService.getAllRecetas(this.CategoryList[i].strCategory));
+      }
+    }else{
+      this.recetas = await this.apiService.getAllRecetas(categoria); 
+    }
+    if(filtro){
+      this.recetas = this.recetas.filter(r => r.strMeal.toLowerCase().includes(filtro));
+    }
 
-    this.router.navigate(['/recetas-list'], {
-      queryParams: { recetas: JSON.stringify(this.recetas) }
-    });
+  this.router.navigate(['/recetas-list'], {
+    queryParams: { recetas: JSON.stringify(this.recetas) }
+  });
   }
 
-  searchRecetas(event: Event, filter: string) {
+  searchRecetas(event: Event, filter: string, categoria: string) {
     event.preventDefault();
-    this.getRecetas(filter);
-    //console.log(this.recetas);
-    //console.log(this.filteredRecetas);
+    this.getRecetas(filter, categoria);
   }
 
+  selectCategory(category: string) {
+    if(category === ''){
+      this.nuevoNombre = "All Categories";
+    }else{
+      this.nuevoNombre = category;
+    }
+    this.selectedCategory = category;
+  }
 }

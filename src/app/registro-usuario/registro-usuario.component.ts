@@ -9,12 +9,14 @@ import { LocalStorageService } from '../local-storage-service.service';
 })
 export class RegistroUsuarioComponent implements OnInit {
   registroForm: FormGroup;
-  nombreUsuarioRegistrado: string | null = null;
+  UsuarioRegistrado: boolean = false;
   constructor(private fb: FormBuilder, private localStorageService: LocalStorageService) {
     
   }
 
   ngOnInit() {
+    this.scrollPageToTop(); // Para que aparezca en la parte de arriba.
+
       this.registroForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       name: ['', [Validators.required]],
@@ -27,8 +29,7 @@ export class RegistroUsuarioComponent implements OnInit {
     if (this.registroForm.valid) {
       const userData = this.registroForm.value;
       this.localStorageService.saveDataLocally(userData);
-
-      this.nombreUsuarioRegistrado = userData.name;
+      this.UsuarioRegistrado = true;
       this.registroForm.reset(); // Restablecer el formulario
       
       console.log(this.localStorageService.getStoredData());
@@ -36,5 +37,10 @@ export class RegistroUsuarioComponent implements OnInit {
       console.log('Datos guardados localmente:', userData);
       // Puedes realizar acciones adicionales después de guardar los datos
     }
+  }
+
+  private scrollPageToTop() {
+    // Utiliza el método scrollTo para desplazar la página hacia arriba sin deslizamiento suave
+    window.scrollTo(0, 0);
   }
 }

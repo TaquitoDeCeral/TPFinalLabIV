@@ -16,6 +16,16 @@
     padding-bottom: 15em;
   }
   
+#algunasRecetas{
+  background-color: rgba(224, 155, 65, 0.493);
+  text-align: center;
+  font-size: 3em;
+  color: rgb(0, 0, 0);
+  padding: 1em;
+  margin: 0;
+
+}
+
   #espacio h1{
     text-align: center;
     font-size: 5em;

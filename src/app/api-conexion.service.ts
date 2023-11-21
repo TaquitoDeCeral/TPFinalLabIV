@@ -13,9 +13,9 @@ export class ApiConexionService {
   private apiUrl = 'https://www.themealdb.com/api/json/v1/1/';
 
   async getAllRecetas(nombre : string): Promise<recetas[]> {
-    const data = await fetch(`${this.apiUrl}search.php?s=${nombre}`);
+    const data = await fetch(`${this.apiUrl}filter.php?c=${nombre}`);
     const procesdata = await data.json();
-    console.log(`${this.apiUrl}search.php?s=${nombre}`);
+    console.log(`${this.apiUrl}filter.php?c=${nombre}`);
     console.log(procesdata);
     return (procesdata.meals) ?? [];
   }

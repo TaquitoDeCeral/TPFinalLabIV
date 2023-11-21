@@ -1,11 +1,16 @@
 <article class="recipe-container">
+  <div class="imagenyboton">
     <img
       class="recipe-photo"
       [src]="recetas?.strMealThumb"
       alt="Exterior photo of {{ recetas?.strMeal }}"
       crossorigin
+      
     />
-    
+    <button class="save-button" (click)="recetas && guardarReceta(recetas.idMeal)"> 
+      Save
+    </button>
+    </div>
     <section class="recipe-details">
       <h1 class="recipe-title" id="title">{{ recetas?.strMeal }}</h1>
       <p class="recipe-origin">Origin: {{ recetas?.strArea}}</p>

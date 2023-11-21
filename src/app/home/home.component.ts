@@ -19,4 +19,15 @@ export class HomeComponent {
     });
     }
   }
+
+  ngOnInit() {
+    // Llama a la función para desplazar la página hacia arriba al entrar en el componente
+    this.scrollPageToTop();
+  }
+
+  private scrollPageToTop() {
+    // Utiliza el método scrollTo para desplazar la página hacia arriba sin deslizamiento suave
+    window.scrollTo(0, 0);
+  }
+
 }

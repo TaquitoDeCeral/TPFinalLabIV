@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,8 @@ import { RecetasRandomHomeComponent } from './recetas-random-home/recetas-random
 import { DetalleRecetaComponent } from './detalle-receta/detalle-receta.component';
 import { RecetasListComponent } from './recetas-list/recetas-list.component';
 import { BuscadorComponent } from './buscador/buscador.component';
+import { NavegadorComponent } from './navegador/navegador.component';
+import { MisRecetasComponent } from './mis-recetas/mis-recetas.component';
 
 
 @NgModule({
@@ -20,12 +23,15 @@ import { BuscadorComponent } from './buscador/buscador.component';
     RecetasRandomHomeComponent,
     DetalleRecetaComponent,
     RecetasListComponent,
-    BuscadorComponent
+    BuscadorComponent,
+    NavegadorComponent,
+    MisRecetasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

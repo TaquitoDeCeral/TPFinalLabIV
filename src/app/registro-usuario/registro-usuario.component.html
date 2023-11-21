@@ -1,6 +1,6 @@
 <main>
-    <div *ngIf="nombreUsuarioRegistrado">
-      <h2>You're welcome, {{ nombreUsuarioRegistrado }}!</h2>
+    <div *ngIf="UsuarioRegistrado">
+      <h2> Registration successful! Now you can log in.</h2>
     </div>
 
 <form novalidate [formGroup]="registroForm" (ngSubmit)="onSubmit()">

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { recetas } from '../Interfaces/recetas';
 import { BuscadorComponent } from '../buscador/buscador.component';
+import { RecetasUsuarioService } from '../recetas-usuario.service';
 
 @Component({
   selector: 'app-recetas-list',
@@ -12,7 +13,7 @@ import { BuscadorComponent } from '../buscador/buscador.component';
 export class RecetasListComponent implements OnInit {
   recetas: recetas[] = [];
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private recetasUsuarioService: RecetasUsuarioService) {}
 
   ngOnInit() {
     // Recuperar las recetas filtradas de la URL
@@ -21,5 +22,10 @@ export class RecetasListComponent implements OnInit {
         this.recetas = JSON.parse(params['recetas']);
       }
     });
+  }
+
+    guardarReceta(idReceta: number) {
+    // Llama al servicio para guardar la id de la receta
+    this.recetasUsuarioService.guardarReceta(idReceta);
   }
 }

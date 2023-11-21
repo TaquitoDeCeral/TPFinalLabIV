@@ -17,4 +17,9 @@ export class LocalStorageService {
     storedData.push(userData);
     localStorage.setItem('user_data', JSON.stringify(storedData));
   }
+
+  checkUserCredentials(username: string, password: string): boolean {
+    const storedData = this.getStoredData();
+    return storedData.some((user: any) => user.name === username && user.password === password);
+  }
 }

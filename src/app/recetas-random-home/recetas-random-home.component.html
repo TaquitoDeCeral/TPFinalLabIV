@@ -1,10 +1,16 @@
 <section *ngIf="comidas" class="listing">
-    <img
-      class="listing-photo"
-      [src]="comidas.strMealThumb"
-      alt="Exterior photo of {{ comidas.strMeal }}"
-      crossorigin
-    />
+    <div class="imagenyboton">
+      <img
+        class="listing-photo"
+        [src]="comidas.strMealThumb"
+        alt="Exterior photo of {{ comidas.strMeal }}"
+        crossorigin
+        
+      />
+      <button class="save-button" (click)="comidas && guardarReceta(comidas.idMeal)"> 
+        Save
+      </button>
+      </div>
     <h2 class="listing-heading">{{ comidas.strMeal }}</h2>
     <p class="listing-location">{{ comidas.strArea }}</p>
     <a [routerLink]="['/detalle-receta', comidas.idMeal]">Let's cook!</a>

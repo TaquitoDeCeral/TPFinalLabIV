@@ -1,0 +1,71 @@
+a{
+    text-decoration: none;
+    color: black;
+    padding: 0.2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+nav a{
+    font-weight: 600;
+    padding-right: 1em;
+
+}
+nav a:hover{
+    color: white;
+    transition: 0.2s;
+}
+
+nav input, nav button{
+    margin-bottom: 0.5em;
+  }
+
+nav input {
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 0.6em;
+    width: 9em;
+  }
+  nav button {
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 1em;
+    color: black;
+    border: none;
+    margin: 0.5em;
+    cursor: pointer;
+  }
+  nav button:hover {
+    color: white;
+  }
+  @media (max-width: 900px){
+    nav{
+       padding: 0.2em;
+       margin-bottom: 0.7em;
+    }
+
+}
+@media (max-width: 440px){
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    
+      nav input, nav button, nav a {
+        width: 100%; 
+        margin: 0.5em 0; 
+      }
+    
+      nav button {
+        background-color: transparent;
+        font-weight: 600;
+        font-size: 1em;
+        color: black;
+        border: none;
+        margin: 0.5em 0;
+        cursor: pointer;
+      }
+
+}

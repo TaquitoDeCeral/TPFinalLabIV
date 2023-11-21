@@ -7,8 +7,29 @@
   }
 .recipe-container {
   margin: 3em;
-
+  
 }
+.imagenyboton {
+  position: relative;
+  
+}
+.save-button {
+  position: absolute;
+  top: 10px; /* Ajusta la posición vertical según sea necesario */
+  right: 10px; /* Ajusta la posición horizontal según sea necesario */
+  padding: 8px 12px;
+  background-color: #b47a0d; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  border: solid 1px rgb(209, 149, 100);
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.save-button:hover {
+  background-color: #daa24f; /* Cambia el color de fondo al pasar el ratón sobre el botón */
+}
+
+
 #title{
   font-size: 3em;
   color: rgb(105, 60, 5);

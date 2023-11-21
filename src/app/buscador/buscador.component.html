@@ -3,16 +3,18 @@
     <section id="categorias">
         <form id="form1">
           <h2 id="Opciones">
-            Category
+            {{ nuevoNombre }}
             <ul>
-              <li *ngFor="let category of CategoryList">{{ category.strCategory }}</li>
+              <li (click)="selectCategory('')">All categories</li>
+              <li *ngFor="let category of CategoryList" (click)="selectCategory(category.strCategory)">
+                {{ category.strCategory }}
             </ul>
           </h2>
         </form>
       </section>
 
     <section id="Buscador">
-        <form (submit)="searchRecetas($event, filter.value)">
+        <form (submit)="searchRecetas($event, filter.value, selectedCategory)">
             <input type="text" placeholder="Find your food" #filter />
             <button class="primary" type="submit" >Search</button>        
           </form> 

@@ -23,18 +23,10 @@ header{
     height: 50px;
     margin-right: 1.2em;
 }
+
 a{
     text-decoration: none;
     color: black;
-}
-nav a{
-    font-weight: 600;
-    padding-right: 1em;
-
-}
-nav a:hover{
-    color: white;
-    transition: 0.2s;
 }
 
 #datos {
