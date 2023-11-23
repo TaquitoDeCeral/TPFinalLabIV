@@ -51,4 +51,25 @@ form {
     background-color: #a0a0a0;
     cursor: not-allowed;
   }
+
+  /* MENSAJES DE ERROR */
+
+  .error-mensaje {
+    margin-top: 2em;
+    background-color: #F7A576;
+    border-radius: 8px;
+    padding: 0.5em;
+  }
+
+  .error-name {
+    color: #C24600;
+    font-weight: bold;
+    margin-top: 1em;
+  }
+  
+  .error-email {
+    color: #C24600;
+    font-weight: bold;
+    margin-top: 1em;
+  }
   

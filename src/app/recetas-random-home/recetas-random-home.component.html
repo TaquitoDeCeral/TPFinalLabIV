@@ -7,8 +7,8 @@
         crossorigin
         
       />
-      <button class="save-button" (click)="comidas && guardarReceta(comidas.idMeal)"> 
-        Save
+      <button class="save-button" (click)="guardarReceta(comidas.idMeal)">
+        {{ recetasEnLista[comidas.idMeal] ? 'Remove' : 'Save' }}
       </button>
       </div>
     <h2 class="listing-heading">{{ comidas.strMeal }}</h2>

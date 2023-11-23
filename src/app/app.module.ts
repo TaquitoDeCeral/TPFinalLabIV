@@ -15,6 +15,7 @@ import { NavegadorComponent } from './navegador/navegador.component';
 import { MisRecetasComponent } from './mis-recetas/mis-recetas.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

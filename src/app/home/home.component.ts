@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { recetas } from '../Interfaces/recetas';
-import { ApiConexionService } from '../api-conexion.service';
+import { ApiConexionService } from '../../Services/api-conexion.service';
 
 @Component({
   selector: 'app-home',

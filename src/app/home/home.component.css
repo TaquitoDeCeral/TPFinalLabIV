@@ -16,15 +16,19 @@
     padding-bottom: 15em;
   }
   
-#algunasRecetas{
-  background-color: rgba(224, 155, 65, 0.493);
-  text-align: center;
-  font-size: 3em;
-  color: rgb(0, 0, 0);
-  padding: 1em;
-  margin: 0;
+  .icono-titulo {
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos hijos */
+    background-color: #daa24f;
+    justify-content: center;
+    padding-top: 0.2em;
+  }
+  h1 {
+    margin: 0;
+    font-size: 3em;
+    padding: 1em;
 
-}
+  }
 
   #espacio h1{
     text-align: center;

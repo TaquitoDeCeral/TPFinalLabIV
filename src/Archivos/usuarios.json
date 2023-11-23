@@ -1,0 +1,116 @@
+{
+  "users": [
+    {
+      "email": "nedef24778@bixolabs.com",
+      "name": "qwe",
+      "password": "qwe",
+      "id": 1
+    },
+    {
+      "email": "AlfredoMercurio@hotmail.com",
+      "name": "FreddyMercurio",
+      "password": "123",
+      "id": 2
+    },
+    {
+      "email": "Macqueen@gmail.com",
+      "name": "ElRayoMcQueen",
+      "password": "123",
+      "id": 3
+    },
+    {
+      "email": "nedef24778@bixolabs.com",
+      "name": "pablo",
+      "password": "qwe",
+      "id": 4
+    },
+    {
+      "email": "simon@gmail.com",
+      "name": "Saimon",
+      "password": "123",
+      "id": 5
+    }
+  ],
+  "recetas": [
+    {
+      "idreceta": "52905",
+      "idusuario": 1,
+      "id": 1
+    },
+    {
+      "idreceta": "52826",
+      "idusuario": 1,
+      "id": 2
+    },
+    {
+      "idreceta": "52931",
+      "idusuario": 1,
+      "id": 4
+    },
+    {
+      "idreceta": "52931",
+      "idusuario": 3,
+      "id": 5
+    },
+    {
+      "idreceta": "52898",
+      "idusuario": 5,
+      "id": 6
+    },
+    {
+      "idreceta": "53015",
+      "idusuario": 5,
+      "id": 7
+    }
+  ],
+  "comentarios": [
+    {
+      "id": 1,
+      "idusuario": "1",
+      "username": "qwe",
+      "comentario": "It's so delicious!!!",
+      "fecha": "2023-11-22T18:31:09.119Z",
+      "idreceta": "52874"
+    },
+    {
+      "id": 2,
+      "idusuario": "1",
+      "username": "qwe",
+      "comentario": "Best recipe I've ever tried!",
+      "fecha": "2023-11-22T22:53:59.070Z",
+      "idreceta": "52826"
+    },
+    {
+      "id": 3,
+      "idusuario": "1",
+      "username": "qwe",
+      "comentario": "I recommend using one more onion. Good recipe anyway.",
+      "fecha": "2023-11-22T22:57:15.898Z",
+      "idreceta": "53052"
+    },
+    {
+      "id": 4,
+      "idusuario": "1",
+      "username": "qwe",
+      "comentario": "SO YUMMY :]]]]",
+      "fecha": "2023-11-23T00:12:50.685Z",
+      "idreceta": "52931"
+    },
+    {
+      "id": 5,
+      "idusuario": "3",
+      "username": "ElRayoMcQueen",
+      "comentario": "That’s why Canada is separate from the States. It’s because, well, Canadians like to be alone. ",
+      "fecha": "2023-11-23T00:15:46.148Z",
+      "idreceta": "52931"
+    },
+    {
+      "id": 6,
+      "idusuario": "5",
+      "username": "Saimon",
+      "comentario": "Wow, the best recipe i never try!!!",
+      "fecha": "2023-11-23T00:44:36.301Z",
+      "idreceta": "52898"
+    }
+  ]
+}

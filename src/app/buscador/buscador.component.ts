@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { recetas } from '../Interfaces/recetas';
-import { ApiConexionService } from '../api-conexion.service';
+import { ApiConexionService } from '../../Services/api-conexion.service';
 import { Category } from '../Interfaces/category';
 
 

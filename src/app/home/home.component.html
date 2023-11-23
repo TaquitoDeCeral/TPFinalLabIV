@@ -8,8 +8,13 @@
     </div>
 </section>
 
-<h1 id="algunasRecetas">Some recipes!</h1>
 
+<div class="icono-titulo">
+  <i class="fas fa-utensils fa-3x"></i>
+  <!-- Utiliza el ícono de pala y tenedor para simbolizar comidas/recetas/cocinar -->
+  <i class="fas fa-utensil-spoon fa-3x"></i>
+  <h1 id="algunasRecetas">Some recipes!</h1>
+</div>
   <section class="results">
     
     <app-recetas-random-home *ngFor="let comida of listaComidas" [comidas]="comida" >
