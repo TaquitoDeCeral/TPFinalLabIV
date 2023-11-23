@@ -23,6 +23,7 @@ export class HomeComponent {
   ngOnInit() {
     // Llama a la función para desplazar la página hacia arriba al entrar en el componente
     this.scrollPageToTop();
+
   }
 
   private scrollPageToTop() {
@@ -30,4 +31,19 @@ export class HomeComponent {
     window.scrollTo(0, 0);
   }
 
+
+  inicializarListaRecetas(){
+    const recetasLocalStorage = sessionStorage.getItem('recetas');
+    console.log(recetasLocalStorage);
+    try {
+      if (recetasLocalStorage) {
+        const recetasTemp = JSON.parse(recetasLocalStorage);
+        
+      }else{
+        
+      }
+    }catch{
+
+    }
+  }
 }

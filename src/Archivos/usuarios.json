@@ -38,11 +38,6 @@
       "id": 1
     },
     {
-      "idreceta": "52826",
-      "idusuario": 1,
-      "id": 2
-    },
-    {
       "idreceta": "52931",
       "idusuario": 1,
       "id": 4
@@ -71,6 +66,11 @@
       "idreceta": "52913",
       "idusuario": 1,
       "id": 9
+    },
+    {
+      "idreceta": "52962",
+      "idusuario": 1,
+      "id": 11
     }
   ],
   "comentarios": [
