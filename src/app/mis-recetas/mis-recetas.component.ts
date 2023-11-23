@@ -23,6 +23,7 @@ export class MisRecetasComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.scrollPageToTop();
     this.obtenerMisIdRecetas();
   }
 
@@ -91,6 +92,11 @@ export class MisRecetasComponent implements OnInit {
   
     // Actualiza el estado de la receta en tiempo real
     this.recetasEnLista[idReceta] = !recetaExistente;
+  }
+
+  private scrollPageToTop() {
+    // Utiliza el método scrollTo para desplazar la página hacia arriba sin deslizamiento suave
+    window.scrollTo(0, 0);
   }
   
 }

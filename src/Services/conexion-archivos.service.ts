@@ -25,6 +25,19 @@ export class ConexionArchivosService {
     return (procesdata[0]) ?? null;
   }
 
+  async comprobarUsuario(nombre: string, password: string): Promise<User | null>  {
+    const data = await fetch(`${this.apiUrl}${this.userURL}?name=${nombre}`);
+    const procesdata = await data.json();
+    const usuario: User | null = (procesdata[0]) ?? null;
+  
+    if (usuario && usuario.password === password) {
+      return usuario;
+    } else {
+      return null;
+    }
+  }
+  
+
   async obtenerUsuarioPorEmail(email: string): Promise<User>  {
     const data = await fetch(`${this.apiUrl}${this.userURL}?email=${email}`);
     const procesdata = await data.json();

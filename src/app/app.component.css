@@ -47,6 +47,9 @@ footer p{
 background-color: rgb(194, 145, 86);
 }
 
+
+
+
 @media (max-width: 900px){
     header{
         flex-direction: column;

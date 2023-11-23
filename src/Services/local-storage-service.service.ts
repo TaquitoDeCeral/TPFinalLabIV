@@ -6,13 +6,16 @@ import { ConexionArchivosService } from './conexion-archivos.service';
   providedIn: 'root'
 })
 export class LocalStorageService {
-  private claveToken = 'token';
+  private claveToken = 'TacoToken';
   constructor(private obtenerUsuarioData: ConexionArchivosService) { }
 
-  async login(nombre: string) {
+  async login(nombre: string, password: string) {
       let usuario = await this.obtenerUsuarioData.obtenerUsuario(nombre);
       console.log(usuario);
-    sessionStorage.setItem(this.claveToken, JSON.stringify(usuario));
+      if(usuario.password === password){
+        sessionStorage.setItem(this.claveToken, JSON.stringify(usuario));
+      }
+    
   }
 
   logout(): void {
@@ -26,10 +29,11 @@ export class LocalStorageService {
       const tokenObj = JSON.parse(tokenString);
       // Asumiendo que hay una propiedad 'nombre' en el objeto del token
       const nombreUsuario = tokenObj.name;
-  
+      const claveUsuario = tokenObj.password;
+      
       if (nombreUsuario) {
         console.log(nombreUsuario);
-        return nombreUsuario;
+        return nombreUsuario && claveUsuario;
       }
     }
     return null; // o un valor predeterminado según tus necesidades
@@ -47,8 +51,6 @@ export class LocalStorageService {
     return null; // o un valor predeterminado según tus necesidades
   }
   
-
-
   estaLogeado(): boolean {
     return !!this.obtenerToken();
   }

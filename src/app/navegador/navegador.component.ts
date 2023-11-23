@@ -20,10 +20,10 @@ export class NavegadorComponent {
   }
 
   ngOnInit(){
-    const name = this.localStorageService.obtenerToken()
-    if(name){
+    const logUser = this.localStorageService.obtenerUsuarioLogeado();
+    if(logUser){
       console.log(this.localStorageService.obtenerToken());
-      this.localStorageService.login(name);
+      this.localStorageService.login(logUser.name, logUser.password);
       this.nombreUsuarioRegistrado = this.localStorageService.obtenerToken();
     }
     
@@ -31,12 +31,12 @@ export class NavegadorComponent {
   
   async login() {
 
-    let data: User = await this.usuarioRegistrado.obtenerUsuario(this.username);
+    let data: User | null = await this.usuarioRegistrado.comprobarUsuario(this.username, this.password);
     if (data) {
       const token ="TacoToken";
       console.log('Inicio de sesión exitoso');
       this.nombreUsuarioRegistrado = this.username;
-      this.localStorageService.login(this.username);
+      this.localStorageService.login(this.username, this.password);
       this.username = '';
       this.password = '';
     } else {
