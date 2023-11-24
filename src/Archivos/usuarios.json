@@ -19,7 +19,7 @@
       "id": 3
     },
     {
-      "email": "nedef24778@bixolabs.com",
+      "email": "pablito@hotmail.com",
       "name": "pablo",
       "password": "qwe",
       "id": 4
@@ -29,6 +29,12 @@
       "name": "Saimon",
       "password": "123",
       "id": 5
+    },
+    {
+      "email": "palta@gmail.com",
+      "name": "palta",
+      "password": "123",
+      "id": 6
     }
   ],
   "recetas": [
@@ -71,6 +77,11 @@
       "idreceta": "52962",
       "idusuario": 1,
       "id": 11
+    },
+    {
+      "idreceta": "52831",
+      "idusuario": 6,
+      "id": 12
     }
   ],
   "comentarios": [
@@ -121,6 +132,14 @@
       "comentario": "Wow, the best recipe i never try!!!",
       "fecha": "2023-11-23T00:44:36.301Z",
       "idreceta": "52898"
+    },
+    {
+      "id": 7,
+      "idusuario": "6",
+      "username": "palta",
+      "comentario": "Absolutely delightful Chicken Karaage! The crispy exterior gives way to perfectly tender and flavorful chicken inside. A burst of savory goodness in every bite. A true culinary delight!",
+      "fecha": "2023-11-24T03:21:37.141Z",
+      "idreceta": "52831"
     }
   ]
 }

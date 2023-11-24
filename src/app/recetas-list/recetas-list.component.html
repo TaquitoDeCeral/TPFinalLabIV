@@ -1,6 +1,6 @@
 <app-buscador></app-buscador>
 <section class="results">
-  <section *ngFor="let receta of recetas" class="listing">
+  <section *ngFor="let receta of recetas | paginate: { itemsPerPage: 9, currentPage: page }" class="listing">
     <div class="imagenyboton">
       <img
         class="recipe-photo"
@@ -17,4 +17,7 @@
     <p class="listing-location">{{ receta.strArea }}</p>
     <a [routerLink]="['/detalle-receta', receta.idMeal]">Let's cook!</a>
   </section>
+
   </section>
+  <pagination-controls class="selector_pagina"(pageChange)="onPageChange($event)" (pageChange)="page = $event " previousLabel="Previous" nextLabel="Next">
+  </pagination-controls>

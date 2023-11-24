@@ -31,8 +31,10 @@ export class ConexionArchivosService {
     const usuario: User | null = (procesdata[0]) ?? null;
   
     if (usuario && usuario.password === password) {
+      console.log("comprobarUsuario: Coincidencia encontrada");
       return usuario;
     } else {
+      console.log("comprobarUsuario: Sin coincidencias");
       return null;
     }
   }
@@ -63,11 +65,10 @@ export class ConexionArchivosService {
 
   async agregarReceta(idreceta: string, nombre: string){
     let iduser = (await this.obtenerUsuario(nombre)).id; 
-    console.log(idreceta, iduser);
+    //console.log(idreceta, iduser);
     const recetaxusuario = {
       idreceta: idreceta,
-      idusuario: iduser,
-       
+      idusuario: iduser,      
     };
     
     const response = await fetch(this.apiUrl.concat(this.recetasURL), {
@@ -83,7 +84,7 @@ export class ConexionArchivosService {
     } else {
       console.error('Error al agregar receta.');
     }
-  }
+  }     
 
   async getRecetas(nombre: string): Promise<Recetaxusuario[]> {
     const usuario = await this.obtenerUsuario(nombre);
@@ -96,7 +97,7 @@ export class ConexionArchivosService {
     const idUsuario = usuario.id;
     const data = await fetch(`${this.apiUrl}${this.recetasURL}?idusuario=${idUsuario}`);
     const procesdata = await data.json();
-    console.log(procesdata);
+    //console.log(procesdata);
     return (procesdata) ?? [];
   }
 
@@ -110,7 +111,7 @@ export class ConexionArchivosService {
 
     const recetasUsuario = await this.getRecetas(nombre);
     const recetaUsuario = recetasUsuario.find(receta => receta.idreceta === idreceta);
-    console.log(recetaUsuario);
+    //console.log(recetaUsuario);
     if (!recetaUsuario) {
         console.error('Receta no encontrada para el usuario.');
         return;
@@ -134,8 +135,8 @@ export class ConexionArchivosService {
   
 //// SISTEMA DE ACCESO Y MODIFICACION DE COMENTARIOS.
   async agregarComentario(comentario: ComentarioReceta): Promise<void> {
-    console.log(comentario);
-    console.log(`${this.apiUrl}${this.comentariosURL}`);
+    //console.log(comentario);
+    //console.log(`${this.apiUrl}${this.comentariosURL}`);
     const response = await fetch(`${this.apiUrl}${this.comentariosURL}`, {
       method: 'POST',
       headers: {
@@ -154,7 +155,7 @@ export class ConexionArchivosService {
   async getComentarios(idreceta: number): Promise<ComentarioReceta[]> {
     const data = await fetch(`${this.apiUrl}${this.comentariosURL}?idreceta=${idreceta}`);
     const procesdata = await data.json();
-    console.log("comentarios:", procesdata);
+    //console.log("comentarios:", procesdata);
     return procesdata ?? [];
   }
 

@@ -13,10 +13,11 @@ import Swal from 'sweetalert2';
   templateUrl: './recetas-list.component.html',
   styleUrls: ['./recetas-list.component.css']
 })
+
 export class RecetasListComponent implements OnInit {
   recetas: recetas[] = [];
   recetasEnLista: Record<string, boolean> = {};
-
+  public page!: number; 
   constructor(private route: ActivatedRoute, private archivoReceta: ConexionArchivosService,
               private usuariodata : LocalStorageService) {}
 
@@ -26,6 +27,7 @@ export class RecetasListComponent implements OnInit {
       if (params['recetas']) {
         this.recetas = JSON.parse(params['recetas']);
         this.actualizarEstadoRecetasEnLista();
+        this.page = 0;
       }
     });
   }
@@ -88,5 +90,11 @@ export class RecetasListComponent implements OnInit {
     recetasUsuario.forEach(receta => {
       this.recetasEnLista[receta.idreceta] = true;
     });
+  }
+
+  onPageChange(event: any) {
+    this.page = event;
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }

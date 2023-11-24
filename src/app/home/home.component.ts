@@ -32,18 +32,4 @@ export class HomeComponent {
   }
 
 
-  inicializarListaRecetas(){
-    const recetasLocalStorage = sessionStorage.getItem('recetas');
-    console.log(recetasLocalStorage);
-    try {
-      if (recetasLocalStorage) {
-        const recetasTemp = JSON.parse(recetasLocalStorage);
-        
-      }else{
-        
-      }
-    }catch{
-
-    }
-  }
 }

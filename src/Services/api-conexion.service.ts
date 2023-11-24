@@ -17,14 +17,14 @@ export class ApiConexionService {
     const data = await fetch(`${this.apiUrl}filter.php?c=${nombre}`);
     const procesdata = await data.json();
   
-    console.log(`${this.apiUrl}filter.php?c=${nombre}`);
-    console.log(procesdata);
+    //console.log(`${this.apiUrl}filter.php?c=${nombre}`);
+    //console.log(procesdata);
   
     const recetas = (procesdata.meals) ?? [];
   
     // Agrega la propiedad 'categoria' a cada receta
     const recetasConCategoria = recetas.map((r: recetas) => ({ ...r, strCategory: nombre }));
-    console.log("categoriaAgregada:",recetasConCategoria);
+    //console.log("categoriaAgregada:",recetasConCategoria);
     return recetasConCategoria;
   }
   
@@ -40,8 +40,8 @@ export class ApiConexionService {
     console.log("API: Llamado a getRecetaByID");
     const data = await fetch(`${this.apiUrl}lookup.php?i=${id}`);
     const procesdata = await data.json();
-    console.log(procesdata);
-    console.log(id);
+    //console.log(procesdata);
+    //console.log(id);
     return (procesdata.meals) ? procesdata.meals[0] : undefined;
   }
 

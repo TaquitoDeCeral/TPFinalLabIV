@@ -3,13 +3,13 @@
       <h2> Registration successful! Now you can log in.</h2>
     </div>
 
-    <div class="error-mensaje">
-    <div *ngIf="usuarioExistente" class="error-name">
-      <i class="fas fa-exclamation-triangle"></i> Username already in use.
-    </div>
-    <div *ngIf="emailExistente" class="error-email">
-      <i class="fas fa-exclamation-triangle"></i> A user with this email address already exists.
-    </div>
+    <div *ngIf="usuarioExistente || emailExistente" class="error-mensaje">
+      <div *ngIf="usuarioExistente" class="error-name">
+        <i class="fas fa-exclamation-triangle"></i> Username already in use.
+      </div>
+      <div *ngIf="emailExistente" class="error-email">
+        <i class="fas fa-exclamation-triangle"></i> A user with this email address already exists.
+      </div>
     </div>
  
 <form novalidate [formGroup]="registroForm" (ngSubmit)="onSubmit()">

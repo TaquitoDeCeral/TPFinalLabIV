@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { recetas } from '../Interfaces/recetas';
 import { ApiConexionService } from '../../Services/api-conexion.service';
 import { Category } from '../Interfaces/category';
+import { CargarListaDeRecetasService } from '../../Services/cargar-lista-de-recetas.service';
 
 
 
@@ -15,48 +16,40 @@ import { Category } from '../Interfaces/category';
 export class BuscadorComponent implements OnInit{
   nuevoNombre: string = 'Category';
   recetas: recetas[] = [];
-  a: recetas[] = [];
   CategoryList: Category[] = [];
   selectedCategory: string;
 
-  constructor(private apiService: ApiConexionService, private router: Router) {
+  constructor(private apiService: ApiConexionService, private router: Router, 
+              private inicializarRecetas: CargarListaDeRecetasService) {
 
   }
-  ngOnInit(): void {
-    this.getCategorys();
+  ngOnInit() {
+    //inicializa las categorias y luego de eso permite hacer el get.
+    this.inicializarRecetas.inicializarListaCategorias().then(() => {
+      this.getCategorys();
+    });
   }
   async getCategorys(){
-    this.CategoryList = await this.apiService.getCategorys();
-    console.log(this.CategoryList);
-    console.log(this.CategoryList[0].strCategory);
-  }
-
-  async getRecetas(filtro: string, categoria?: string) {
-    this.recetas = [];
-    
-    if(!categoria){
-      for(let i = 0; i < this.CategoryList.length; i++){
-        const recetasCategoria = await this.apiService.getAllRecetas(this.CategoryList[i].strCategory);
-        this.recetas.push(...recetasCategoria);
+    //this.CategoryList = await this.apiService.getCategorys();
+    const categoriaStorage = sessionStorage.getItem('categorias');
+    //console.log(categoriaStorage);
+    try {
+      if(categoriaStorage){
+        this.CategoryList = JSON.parse(categoriaStorage);
+      }else{
+        await this.inicializarRecetas.inicializarListaCategorias();
+        
       }
-
-    sessionStorage.setItem('recetas', JSON.stringify(this.recetas));
-    }else{
-      this.recetas = await this.apiService.getAllRecetas(categoria); 
+    } catch (error) {
+      console.error('Error en getCategorys:', error);
     }
-    if(filtro){
-      this.recetas = this.recetas.filter(r => r.strMeal.toLowerCase().includes(filtro));
-    }
-
-  this.router.navigate(['/recetas-list'], {
-    queryParams: { recetas: JSON.stringify(this.recetas) }
-  });
   }
 
-  searchRecetas(event: Event, filter: string, categoria: string) {
+
+  async searchRecetas(event: Event, filter: string, categoria: string) {
     event.preventDefault();
     const recetasLocalStorage = sessionStorage.getItem('recetas');
-    console.log(recetasLocalStorage);
+    //console.log(recetasLocalStorage);
     try {
       if (recetasLocalStorage) {
         const recetasTemp = JSON.parse(recetasLocalStorage);
@@ -75,11 +68,11 @@ export class BuscadorComponent implements OnInit{
           queryParams: { recetas: JSON.stringify(this.recetas) }
         });
       } else {
-        this.getRecetas(filter, categoria);
+        //await this.inicializarRecetas.inicializarListaRecetas();
       }
     } catch (error) {
       console.error('Error al parsear JSON desde localStorage:', error);
-      // Maneja el error según tus necesidades, por ejemplo, llamando a this.getRecetas(filter, categoria);
+    
     }
   }
   

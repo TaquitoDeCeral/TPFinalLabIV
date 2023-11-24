@@ -13,8 +13,7 @@ import { RecetasListComponent } from './recetas-list/recetas-list.component';
 import { BuscadorComponent } from './buscador/buscador.component';
 import { NavegadorComponent } from './navegador/navegador.component';
 import { MisRecetasComponent } from './mis-recetas/mis-recetas.component';
-
-
+import { NgxPaginationModule } from 'ngx-pagination'
 
 @NgModule({
   declarations: [
@@ -33,6 +32,7 @@ import { MisRecetasComponent } from './mis-recetas/mis-recetas.component';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

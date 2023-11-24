@@ -58,6 +58,33 @@
     margin-left: 5px;
   }
 
+
+  .selector_pagina ::ng-deep .ngx-pagination .current {
+    background: #c58524;
+  }
+  .selector_pagina {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .selector_pagina a {
+    margin: 0 5px;
+    text-decoration: none;
+    color: #333;
+  }
+  ::ng-deep .selector_pagina .ngx-pagination li {
+    font-size: 1.6em; /* Tamaño de fuente personalizado */
+    font-family: 'Playfair Display', serif;
+  }
+  
+  /* Estilo para el número activo */
+  ::ng-deep .selector_pagina .ngx-pagination li.active {
+    font-weight: bold;
+    color: #ff6600; /* Color personalizado para el número activo */
+  }
+  
+
   @media (min-width: 500px) and (max-width: 768px) {
     .results {
         grid-template-columns: repeat(2, 1fr);

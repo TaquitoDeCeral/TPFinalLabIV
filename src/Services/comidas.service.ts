@@ -13,14 +13,14 @@ export class comidasService {
   async getRecetasRandom(): Promise<recetas[]> {
     const data = await fetch(this.urlRandom);
     const procesdata = await data.json();
-    console.log(procesdata);
+    //console.log(procesdata);
     return (procesdata.meals) ?? [];
   }
   async getRecetaByID(id: number): Promise<recetas | undefined> {
     const data = await fetch(`${this.urlByID}${id}`);
     const procesdata = await data.json();
-    console.log(procesdata);
-    console.log(`${this.urlByID}${id}`);
+    //console.log(procesdata);
+    //console.log(`${this.urlByID}${id}`);
     return (procesdata.meals) ? procesdata.meals[0]: undefined;
   }
 }
